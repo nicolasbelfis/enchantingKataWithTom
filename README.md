@@ -9,4 +9,4 @@ It comes with `Gradle 6.6` and it contains several dependencies:
 How to run tests:
 `./gradlew test`
 
-This project has been tested with `java: 12.0.2-zulu`
+This project has been tested with `java: 12.0.2-zulu` on `Intellj IDEA CE 2020.2.1`
