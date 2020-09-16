@@ -1,6 +1,5 @@
 package com.codurance.traineeship.katas;
 
-import org.hamcrest.Matcher;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,9 +26,8 @@ class MagicBookShould {
     public void select_icy_enchantment(){
         when(dice.throwDice(Dices.FIVE))
                 .thenReturn(1);
-        Enchantment anIcyEnchantment = new Enchantment("Icy", "+5 ice damage");
-        EnchantmentNew enchantmentNew = EnchantmentNew.ICE;
-        assertThat(magicBook.selectEnchantment(),is(enchantmentNew));
+        Enchantment enchantment = Enchantment.ICE;
+        assertThat(magicBook.selectEnchantment(),is(enchantment));
     }
 
 }

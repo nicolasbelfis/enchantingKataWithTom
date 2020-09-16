@@ -1,27 +1,17 @@
 package com.codurance.traineeship.katas;
 
-import java.util.Objects;
+public enum Enchantment {
+  AGILITY("Quick", "+5 agility"),
+  STRENGTH("Angry", "+5 strength"),
+  ICE("Icy", "+5 ice damage"),
+  FIRE("Inferno", "+5 fire damage"),
+  LIFE_STEAL("Vampire", "+5 life steal");
 
-import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
-import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
+  String prefix;
+  String attributes;
 
-class Enchantment {
-    final String enchantPrefix;
-
-    final String enchantAttribute;
-
-    public Enchantment(String enchantPrefix, String enchantAttribute) {
-        this.enchantPrefix = enchantPrefix;
-        this.enchantAttribute = enchantAttribute;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        return reflectionEquals(this, other);
-    }
-
-    @Override
-    public int hashCode() {
-        return reflectionHashCode(this);
-    }
+  Enchantment(String prefix, String attributes) {
+    this.prefix = prefix;
+    this.attributes = attributes;
+  }
 }

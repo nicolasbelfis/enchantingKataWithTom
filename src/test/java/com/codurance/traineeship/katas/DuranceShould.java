@@ -54,7 +54,7 @@ public class DuranceShould {
         Durance durance = aDurance();
         when(magicBook.selectEnchantment())
             .thenReturn(
-                EnchantmentNew.AGILITY);
+                Enchantment.AGILITY);
 
         String description = durance
                 .enchantWeapon()
@@ -85,7 +85,7 @@ public class DuranceShould {
 
         when(magicBook.selectEnchantment())
             .thenReturn(
-                EnchantmentNew.AGILITY);
+                Enchantment.AGILITY);
         String weaponDescription = aDurance()
                 .enchantWeapon()
                 .describeWeapon();
@@ -99,7 +99,7 @@ public class DuranceShould {
     void have_ice_enchantment_if_the_magic_book_selects_ice_enchantment(){
         when(magicBook.selectEnchantment())
                 .thenReturn(
-                        EnchantmentNew.ICE);
+                        Enchantment.ICE);
         when(dice.throwDice(Dices.TEN)).thenReturn(2);
         String weaponDescription = aDurance()
                 .enchantWeapon()

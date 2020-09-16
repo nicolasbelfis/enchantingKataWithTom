@@ -8,7 +8,7 @@ public class MagicBook {
         this.dice = dice;
     }
 
-    public EnchantmentNew selectEnchantment() {
-        return EnchantmentNew.ICE;
+    public Enchantment selectEnchantment() {
+        return Enchantment.ICE;
     }
 }
