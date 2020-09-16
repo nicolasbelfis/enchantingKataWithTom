@@ -8,14 +8,14 @@ public class Durance {
             "Dagger of the Nooblet\n" +
                     " 5 - 10 attack damage\n" +
                     " 1.2 attack speed";
-    private final Optional<Enchantment> enchantment;
+    private final Optional<EnchantmentNew> enchantment;
     private final Dice dice;
     private final MagicBook magicBook;
 
-    public Durance(Enchantment enchantment, Dice dice, MagicBook
+    public Durance(EnchantmentNew enchantmentNew, Dice dice, MagicBook
         magicBook) {
 
-        this.enchantment = Optional.ofNullable(enchantment);
+        this.enchantment = Optional.ofNullable(enchantmentNew);
         this.dice = dice;
         this.magicBook = magicBook;
     }
@@ -32,10 +32,10 @@ public class Durance {
                 .orElse(weaponDescription);
     }
 
-    private String describe(Enchantment enchant) {
-        return enchant.enchantPrefix + " " +
+    private String describe(EnchantmentNew enchantmentNew) {
+        return enchantmentNew.prefix + " " +
                 weaponDescription + "\n " +
-                enchant.enchantAttribute;
+                enchantmentNew.attributes;
     }
 
     public Durance enchantWeapon() {

@@ -28,7 +28,8 @@ class MagicBookShould {
         when(dice.throwDice(Dices.FIVE))
                 .thenReturn(1);
         Enchantment anIcyEnchantment = new Enchantment("Icy", "+5 ice damage");
-        assertThat(magicBook.selectEnchantment(),is(anIcyEnchantment));
+        EnchantmentNew enchantmentNew = EnchantmentNew.ICE;
+        assertThat(magicBook.selectEnchantment(),is(enchantmentNew));
     }
 
 }
