@@ -30,4 +30,12 @@ class MagicBookShould {
         assertThat(magicBook.selectEnchantment(),is(enchantment));
     }
 
+    @Test
+    public void select_agility_enchantment(){
+        when(dice.throwDice(Dices.FIVE))
+                .thenReturn(2);
+        Enchantment enchantment = Enchantment.AGILITY;
+        assertThat(magicBook.selectEnchantment(),is(enchantment));
+    }
+
 }

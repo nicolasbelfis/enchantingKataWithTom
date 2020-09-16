@@ -96,7 +96,7 @@ public class DuranceShould {
     }
 
     @Test
-    void have_ice_enchantment_if_the_magic_book_selects_ice_enchantment(){
+    void enchant_his_weapon_with_the_enchantment_returned_by_the_magic_book(){
         when(magicBook.selectEnchantment())
                 .thenReturn(
                         Enchantment.ICE);
