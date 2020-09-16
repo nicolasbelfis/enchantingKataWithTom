@@ -10,15 +10,19 @@ public class Durance {
                     " 1.2 attack speed";
     private final Optional<Enchantment> enchantment;
     private final Dice dice;
+    private final MagicBook magicBook;
 
-    public Durance(Enchantment enchantment, Dice dice) {
+    public Durance(Enchantment enchantment, Dice dice, MagicBook
+        magicBook) {
 
         this.enchantment = Optional.ofNullable(enchantment);
         this.dice = dice;
+        this.magicBook = magicBook;
     }
 
-    public Durance(Dice dice) {
+    public Durance(Dice dice, MagicBook magicBook) {
         this.dice = dice;
+        this.magicBook = magicBook;
         this.enchantment = Optional.empty();
     }
 
@@ -36,12 +40,10 @@ public class Durance {
 
     public Durance enchantWeapon() {
         if (dice.throwDice(Dices.TEN) == 1)
-            return new Durance(dice);
+            return new Durance(dice, magicBook);
         return new Durance(
-                new Enchantment(
-                        "Quick",
-                        "+5 agility"),
-                dice);
+                magicBook.selectEnchantment(),
+                dice, magicBook);
     }
 
 }

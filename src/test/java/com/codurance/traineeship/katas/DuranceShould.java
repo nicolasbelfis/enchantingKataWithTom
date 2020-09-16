@@ -53,6 +53,13 @@ public class DuranceShould {
     void describe_a_weapon_with_enchant() {
         Durance durance = aDurance();
 
+        Enchantment enchantment = new Enchantment(
+            "Quick",
+            "+5 agility");
+        when(magicBook.selectEnchantment())
+            .thenReturn(
+                enchantment);
+
         String description = durance
                 .enchantWeapon()
                 .describeWeapon();
@@ -65,8 +72,6 @@ public class DuranceShould {
 
     @Test
     void lose_his_current_enchantment_if_the_first_throw_is_1() {
-
-
         when(dice.throwDice(Dices.TEN)).thenReturn(1);
 
         String weaponDescription = aDurance()
@@ -82,6 +87,12 @@ public class DuranceShould {
     void enchant_successfully_if_the_first_throw_is_2() {
         when(dice.throwDice(Dices.TEN)).thenReturn(2);
 
+        Enchantment enchantment = new Enchantment(
+            "Quick",
+            "+5 agility");
+        when(magicBook.selectEnchantment())
+            .thenReturn(
+                enchantment);
         String weaponDescription = aDurance()
                 .enchantWeapon()
                 .describeWeapon();
@@ -111,7 +122,7 @@ public class DuranceShould {
     }
 
     private Durance aDurance() {
-        return new Durance(dice);
+        return new Durance(dice, magicBook);
     }
 
 }
